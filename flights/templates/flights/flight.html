@@ -21,7 +21,8 @@
 </ul>
 
 <h2>Add Passenger</h2>
-<form action="{% url 'book' flight.id %}">
+
+<form action="{% url 'book' flight.id %}" method="post">
     {% csrf_token %}
     <select name="passenger">
         {% for passenger in non_passengers %}
@@ -29,9 +30,7 @@
         {% endfor %}
     </select>
     <input type="submit">
-
 </form>
-
 
 <a href="{% url 'index' %}">Back to Full List</a>
 
